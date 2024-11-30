@@ -73,10 +73,75 @@
 // document.write("Month : " + month + "<br>");
 // document.write("Abbreviation : " + monthAbbrev + "<br>" + "<br>");
 
-var firstChar = text.indexOf("World War II");
-for (var i = 0; i < text.length; i++) {
-  if (text.slice(i, i + 12) === "World War II") {
-    text = text.slice(0, i) + "the Second World War" + text.slice(i + 12);
-  }
+let city = "New York";
+console.log(city.toUpperCase());  // "NEW YORK"
+console.log(city.toLowerCase());  // "new york"
+
+let word = "Hello JavaScript";
+console.log(word.length);  // 10
+console.log(word.slice(6, 10));  // "Java"
+
+let sentence = "Learning JavaScript is fun";
+console.log(sentence.indexOf("JavaScript"));  // 9
+
+let message = "Hello world";
+console.log(message.replace("world", "JavaScript"));  // "Hello JavaScript"
+
+let num = 4.7;
+console.log(Math.round(num));  // 5
+console.log(Math.floor(num));  // 4
+console.log(Math.ceil(num));   // 5
+
+let strNum = "123";
+console.log(Number(strNum));  // 123
+console.log(parseInt(strNum));  // 123
+
+let numStr = 456;
+console.log(numStr.toString());  // "456"
+
+let numDeci = 3.14159;
+console.log(numDeci.toFixed(2));  // "3.14"
+
+let currentDate = new Date();
+console.log(currentDate);
+
+// let date = new Date();
+// console.log(date.getFullYear());  // e.g., 2024
+// console.log(date.getMonth() + 1);  // e.g., 11 (months are zero-indexed)
+// console.log(date.getDate());  // e.g., 8
+
+let date = new Date();
+date.setFullYear(2025);
+console.log(date.getFullYear());  // 2025
+
+function greet(name) {
+  return "Hello, " + name;
 }
-document.write(text + "<br>" + "<br>");
+console.log(greet("Nadeem Hussain"));  // "Hello, Alice"
+
+function add(a, b) {
+  return a + b;
+}
+console.log(add(5, 3));  // 8
+
+
+function validatePassword(password) {
+  if (password.length < 8) {
+      return "Password must be at least 8 characters long";
+  }
+  if (password === password.toLowerCase() || password === password.toUpperCase()) {
+      return "Password must include both uppercase and lowercase letters";
+  }
+  if (!/[0-9]/.test(password)) {
+      return "Password must include at least one number";
+  }
+  return "Password is valid";
+}
+
+console.log(validatePassword("Abc123"));        // "Password must be at least 8 characters long"
+console.log(validatePassword("abcdefgh"));      // "Password must include both uppercase and lowercase letters"
+console.log(validatePassword("Abcdefgh"));      // "Password must include at least one number"
+console.log(validatePassword("Abcd1234"));      // "Password is valid"
+
+
+
